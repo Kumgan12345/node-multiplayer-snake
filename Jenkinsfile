@@ -10,17 +10,16 @@ node ('Ubuntu-app-agent') {
          * docker build on the command line */
        app = docker.build("strangerganesh/snake")
     }
+    
     stage('Post-to-dockerhub') {
+        
        docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
-            app.push("latest")
-        			}
-         }
+           app.push("latest")
+           }
+    }
       
     stage('Pull-image-server') {
-        
         sh "docker-compose down"
         sh "docker-compose up -d"   
-      }
-    
-     
+    }
 }
