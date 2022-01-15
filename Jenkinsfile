@@ -1,4 +1,4 @@
-node ('Ubuntu-app-agent') {  
+node {  
     def app
     try {
     notifyBuild('STARTED')
