@@ -36,7 +36,7 @@ node ('Ubuntu-app-agent') {
        // build 'security-DAST-Arachni'
        sh 'echo "DAST-Phase passed" '
     }
-    } catch (e) {
+  } catch (e) {
 
      // If there was an exception thrown, the build failed
 
